@@ -11,5 +11,7 @@ namespace MVC_Hunting.Models
         public String Email { get; set; }
         public String PhoneNumber { get; set; }
         public Boolean? WillAttend { get; set; }
+
+        public String GuestResponse { get; set; }
     }
 }

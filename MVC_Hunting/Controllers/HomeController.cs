@@ -19,7 +19,14 @@ namespace MVC_Hunting.Controllers
         //}
         public ViewResult Index()
         {
-            ViewBag.MyFirstViewBag = "This is My First View Bag";
+            int ThisHour = System.DateTime.Now.Hour;
+            ViewBag.Greeting = ThisHour < 12 ? "Good Morning" : "Good Afternoon";
+            ViewBag.MyFirstViewBag = "Well Come to the my World";
+            return View();
+        }
+
+        public ViewResult RsvpForm()
+        {
             return View();
         }
     }
