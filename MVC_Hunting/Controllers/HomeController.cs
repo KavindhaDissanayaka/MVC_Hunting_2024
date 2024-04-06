@@ -19,6 +19,7 @@ namespace MVC_Hunting.Controllers
         //}
         public ViewResult Index()
         {
+            ViewBag.MyFirstViewBag = "This is My First View Bag";
             return View();
         }
     }
