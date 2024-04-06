@@ -13,9 +13,13 @@ namespace MVC_Hunting.Controllers
         //{
         //    return View();
         //}
-        public String Index()
+        //public String Index()
+        //{
+        //    return "My Name Is Kavinda";
+        //}
+        public ViewResult Index()
         {
-            return "My Name Is Kavinda";
+            return View();
         }
     }
 }
