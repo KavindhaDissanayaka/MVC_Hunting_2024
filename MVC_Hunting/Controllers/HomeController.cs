@@ -29,5 +29,9 @@ namespace MVC_Hunting.Controllers
         {
             return View();
         }
+        public ViewResult testPage()
+        {
+            return View();
+        }
     }
 }
