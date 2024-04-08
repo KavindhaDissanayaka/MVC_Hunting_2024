@@ -16,7 +16,7 @@ namespace MVC_Hunting.Controllers
             return View("Login");
         }
 
-        public string Login(UserModel myModel)
+        public ActionResult Login(UserModel myModel)
         {
             //return $"Login Detail\nUserName : {myModel.UserName}\nPassword : {myModel.Password}";
             SecurityService myService = new SecurityService();
@@ -33,11 +33,11 @@ namespace MVC_Hunting.Controllers
             {
                
 
-                return $"User Login Success..!. Your User name is {UserName} and Your password is {UserPW}";
+                return View("LoginSuccess", myModel);
             }
             else
             {
-                return $"Invalid Username or Password...! You Entered your UserName as {UserName} And Passwors as {UserPW}. Please check and enter a Valid User Credintial.";
+                return View("LoginFail",myModel);
             }
 
         }

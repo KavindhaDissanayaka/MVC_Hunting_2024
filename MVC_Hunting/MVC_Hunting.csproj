@@ -115,6 +115,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\LoginSuccess.cshtml" />
+    <Content Include="Views\Login\LoginFail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
