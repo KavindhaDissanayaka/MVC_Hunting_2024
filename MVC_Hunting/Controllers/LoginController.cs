@@ -20,6 +20,7 @@ namespace MVC_Hunting.Controllers
         {
             //return $"Login Detail\nUserName : {myModel.UserName}\nPassword : {myModel.Password}";
             SecurityService myService = new SecurityService();
+            UserAuthentication myUser = new UserAuthentication();
             String UserName = String.Empty;
             String UserPW = String.Empty;
             if (myService.GetUserData(myModel).Count == 2)
@@ -29,18 +30,41 @@ namespace MVC_Hunting.Controllers
                 UserPW = myService.GetUserData(myModel)[1];
             }
 
-            if (myService.CheckValidUser(myModel))
-            {
+            //if (myService.CheckValidUser(myModel))
+            //{
                
 
-                return View("LoginSuccess", myModel);
+            //    return View("LoginSuccess", myModel);
+            //}
+            //else
+            //{
+            //    return View("LoginFail",myModel);
+            //}
+
+            if(myUser.isAvailableUser(UserName))
+            {
+                if (myUser.CheckValidUser(UserName, UserPW))
+                {
+
+                    return View("LoginSuccess", myModel);
+                }
+                else
+                {
+                    return View("LoginFail", myModel);
+                }
             }
             else
             {
-                return View("LoginFail",myModel);
+                return View("Signin");
             }
-
         }
-     
+        [HttpPost]
+        public ActionResult Signin(UserModel myUserModle)
+        {
+            UserAuthentication myUser = new UserAuthentication();
+            myUser.InsertNewUser(myUserModle.UserName, myUserModle.Password, myUserModle.UserRole);
+            return View("Login");
+        }
+       
     }
 }

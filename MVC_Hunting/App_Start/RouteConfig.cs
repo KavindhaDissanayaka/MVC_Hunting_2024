@@ -13,6 +13,8 @@ namespace MVC_Hunting
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+
             routes.MapRoute(
              name: "Login",
              url: "{Login}",
@@ -21,12 +23,12 @@ namespace MVC_Hunting
             routes.MapRoute(
                name: "MyTest",
                url: "MyTest/{action}",
-               defaults: new { controller = "MyTest", action = "Welcome1"}
+               defaults: new { controller = "MyTest", action = "Welcome1" }
            );
             routes.MapRoute(
                name: "Default",
                url: "{controller}/{action}/{id}",
-               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+               defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
            );
         }
     }
